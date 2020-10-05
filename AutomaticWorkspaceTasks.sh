@@ -18,11 +18,12 @@ do
 
     # Clean
     cd ${PROJECT_SOURCE_DIR}
-#   git clean -fx -d
 #   git reset --hard
-#   git gc --aggressive
+#   git clean -fx -d
     git fetch --all --prune
     git pull --all
+#   git reflog expire --expire=now --expire-unreachable=now --all
+#   git gc --aggressive --prune=now
 
     if [ -f "${PROJECT_SOURCE_DIR}/CMakeLists.txt" ]
     then
